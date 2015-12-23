@@ -4,6 +4,7 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using ws2.Models;
 
 namespace ws2.Controllers
 {
@@ -12,6 +13,7 @@ namespace ws2.Controllers
         // GET api/main
         public IEnumerable<string> Get()
         {
+            
             return new string[] { "value1", "value2" };
         }
 
@@ -24,11 +26,15 @@ namespace ws2.Controllers
         // POST api/main
         public void Post([FromBody]string value)
         {
+            
         }
 
         // PUT api/main/5
         public void Put(int id, [FromBody]string value)
         {
+            var queryString = this.Request.GetQueryNameValuePairs();
+
+
         }
 
         // DELETE api/main/5
