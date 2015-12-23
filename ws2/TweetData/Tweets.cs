@@ -21,7 +21,8 @@ namespace ws2
 
     public class Error
     {
-        public string error { get; set; }
+        public bool error { get; set; }
+        public string errorDescription { get; set; }
     }
 
     public class Following

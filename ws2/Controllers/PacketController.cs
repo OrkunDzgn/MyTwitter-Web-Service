@@ -33,7 +33,7 @@ namespace ws2.Controllers
                     return GetUser(p);
                     break;
                 case "Login":
-                    //return Login(p);
+                    return Login(p);
                     break;
                 case "SignUp":
                     return SignUp(p);
@@ -49,7 +49,7 @@ namespace ws2.Controllers
         User GetUser(Packet p)
         {
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
+            var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
             User userInfo = new User();
             userInfo._id = user[0]._id;
             userInfo.username = user[0].username;
@@ -58,42 +58,51 @@ namespace ws2.Controllers
             return userInfo;
         }
         
-        /*
+        
         User Login(Packet p)
         {
             //Data query from DB
-            IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("userinfos");
-            var user = collection.Find<UserCredential>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
-            Error errorPacket = new Error();
+            IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds");
+            var user = collection.Find<UserCredential>(x => x.username == p.UserCreds.username).ToListAsync().GetAwaiter().GetResult();
 
-            if (user.Count != 0) { 
+            if (user.Count != 0) { // >0 if there is a username in database that already registered 
                 //Data that user entered
-                var list = new List<UserCredential> 
-                              {
+                var list = new List<UserCredential>{
                                  new UserCredential { _id = p.UserCreds._id,
                                             username = p.UserCreds.username,
                                             password = p.UserCreds.password
                                             }
                                };
 
-                //Check password here!!
-                if (list[0]._id == user[0]._id)
+                //Check if password is also true
+                if (list[0].password == user[0].password)
                 {
-                    return GetUser(p);
+                    var testClass = new User()
+                    {
+                        username = p.UserCreds.username
+                    };
+                    var pack = new Packet()
+                    {
+                        Function = "GetUser",
+                        User = testClass
+                    };
+                    return GetUser(pack);
                 }
                 else {
                     //p.Error.error = "{\"error\": \"Invalid Username - Password combination.\"}";
                     //return errorPacket;
+                    return null;
                 }
             }
-            else
+            else //No username like that
             {
-                //p.Error.error = "{\"error\": \"Invalid Username - Password combination.\"}";
+                //p.Error.error = "{\"error\": \"There is no registered username.\"}";
                 //return errorPacket;
+                return null;
             }
             
         }
-        */
+        
 
         User SignUp(Packet p)
         {
@@ -131,17 +140,6 @@ namespace ws2.Controllers
                 collectionUser.InsertManyAsync(listInfo).GetAwaiter().GetResult();
             }
             return null;
-        }
-
-
-        User InitializeUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("userinfo");
-            var user = collection.Find<User>(x => x._id == p.UserCreds._id).ToListAsync().GetAwaiter().GetResult();
-            User userInfo = new User();
-            userInfo._id = user[0]._id;
-            userInfo.username = user[0].username;
-            return userInfo;
         }
 
         /*
