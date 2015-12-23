@@ -48,11 +48,13 @@ namespace ws2.Controllers
 
         User GetUser(Packet p)
         {
-            IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds");
-            var user = collection.Find<UserCredential>(x => x._id == p.UserCreds._id).ToListAsync().GetAwaiter().GetResult();
+            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
+            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
             User userInfo = new User();
             userInfo._id = user[0]._id;
             userInfo.username = user[0].username;
+            userInfo.description = user[0].description;
+            userInfo.dateJoined = user[0].dateJoined;
             return userInfo;
         }
         
