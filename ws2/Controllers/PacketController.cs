@@ -41,6 +41,9 @@ namespace ws2.Controllers
                 case "SendTweet":
                     //return SendTweet(p);
                     break;
+                case "UpdateUser":
+                    return UpdateUser(p);
+                    break;
             }
 
             return null;
@@ -56,6 +59,25 @@ namespace ws2.Controllers
             userInfo.description = user[0].description;
             userInfo.dateJoined = user[0].dateJoined;
             return userInfo;
+        }
+
+
+        User UpdateUser(Packet p)
+        {
+            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
+            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
+
+            var listInfo = new List<User>{
+                             new User { description = p.User.description,
+                                        profilePicture = p.User.profilePicture
+                                      }
+                };
+            var filter = Builders<User>.Filter.Eq("_id", p.User._id);
+            var updateDescription = Builders<User>.Update.Set("description", p.User.description);
+            var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+            collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
+            collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+            return null;
         }
         
         
@@ -163,12 +185,6 @@ namespace ws2.Controllers
                 var us = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
                 User current = new User();
                 current.tweets = us[0].tweets;
-
-
-
-        
-
-
 
 
                 /*
