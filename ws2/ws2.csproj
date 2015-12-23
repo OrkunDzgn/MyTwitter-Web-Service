@@ -158,7 +158,7 @@
     </Compile>
     <Compile Include="Models\Packet.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TweetData\Tweets.cs" />
+    <Compile Include="TweetData\Tweet.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Areas\HelpPage\HelpPage.css" />

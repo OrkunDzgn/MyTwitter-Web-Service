@@ -95,7 +95,8 @@ namespace ws2.Controllers
 
         User SignUp(Packet p)
         {
-            IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds");
+            IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds"); //Connection to usercreds collection
+
             //Check if the username already exists
             var userCred = collection.Find<UserCredential>(x => x.username == p.UserCreds.username).ToListAsync().GetAwaiter().GetResult();
             if (userCred.Count > 0)
@@ -104,36 +105,32 @@ namespace ws2.Controllers
                 //p.User.error = "{\"error\": \"Username already exists.\"}";
                 //return errorPacket;
             }
-            else //If not, get the username and pass from received packet and insert into database
+            else //If not, get the username and pass from received packet and insert into usercreds collection in database
             {
-                var listCred = new List<UserCredential> 
-                          {
+                var listCred = new List<UserCredential>{
                              new UserCredential { _id = p.UserCreds._id,
                                         username = p.UserCreds.username,
                                         password = p.UserCreds.password
-                                        }
-                          };
+                             }
+                 };
+                collection.InsertManyAsync(listCred).GetAwaiter().GetResult(); //creadentials'i insert ettik
 
-                collection.InsertManyAsync(listCred).GetAwaiter().GetResult();
 
-
-                //Sign-up'dan hemen sonra User'in Infı'larinin default olarak database'de olusturulmasi
-                IMongoCollection<User> collection1 = _database.GetCollection<User>("userinfo");
-                var user = collection1.Find<User>(x => x.username == p.UserCreds.username).ToListAsync().GetAwaiter().GetResult();
-
-                var listInfo = new List<User> 
-                          {
+                //After sign up, we will initialize user collections in database
+                IMongoCollection<User> collectionUser = _database.GetCollection<User>("userinfos");
+                var listInfo = new List<User>{
                              new User { _id = p.UserCreds._id,
                                         username = p.UserCreds.username,
                                         description = "",
                                         dateJoined = DateTime.Now.ToOADate(),
                                         profilePicture = ""
-                                }
-                          };
-                collection1.InsertManyAsync(listInfo).GetAwaiter().GetResult();
+                                      }
+                };
+                collectionUser.InsertManyAsync(listInfo).GetAwaiter().GetResult();
             }
             return null;
         }
+
 
         User InitializeUser(Packet p)
         {
