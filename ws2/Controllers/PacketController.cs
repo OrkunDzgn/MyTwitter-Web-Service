@@ -25,7 +25,7 @@ namespace ws2.Controllers
 
         }
 
-        public User Post(Packet p)
+        public Packet Post(Packet p)
         {
             switch (p.Function)
             {
@@ -41,6 +41,9 @@ namespace ws2.Controllers
                 case "SendTweet":
                     return SendTweet(p);
                     break;
+                case "GetTweets":
+                    return GetTweets(p);
+                    break;
                 case "UpdateUser":
                     return UpdateUser(p);
                     break;
@@ -49,21 +52,23 @@ namespace ws2.Controllers
             return null;
         }
 
-        User GetUser(Packet p)
+        Packet GetUser(Packet p)
         {
+            Packet pSend = new Packet();
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
             var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
-            User userInfo = new User();
-            userInfo._id = user[0]._id;
-            userInfo.username = user[0].username;
-            userInfo.description = user[0].description;
-            userInfo.dateJoined = user[0].dateJoined;
-            return userInfo;
+            //User userInfo = new User();
+            pSend.User._id = user[0]._id;
+            pSend.User.username = user[0].username;
+            pSend.User.description = user[0].description;
+            pSend.User.dateJoined = user[0].dateJoined;
+            return pSend;
         }
 
 
-        User UpdateUser(Packet p)
+        Packet UpdateUser(Packet p)
         {
+            //Packet pSend = new Packet();
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
             var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
 
@@ -81,7 +86,7 @@ namespace ws2.Controllers
         }
         
         
-        User Login(Packet p)
+        Packet Login(Packet p)
         {
             //Data query from DB
             IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds");
@@ -126,7 +131,7 @@ namespace ws2.Controllers
         }
         
 
-        User SignUp(Packet p)
+        Packet SignUp(Packet p)
         {
             IMongoCollection<UserCredential> collection = _database.GetCollection<UserCredential>("usercreds"); //Connection to usercreds collection
 
@@ -165,25 +170,58 @@ namespace ws2.Controllers
         }
 
 
-        User SendTweet(Packet p)
+        Packet SendTweet(Packet p)
         {
+            //Create a uniqueID for tweet -walkaround for unique _id in mongoDB
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
+            var random = new Random();
+            string tweetID = new string(Enumerable.Repeat(chars, 30).Select(s => s[random.Next(s.Length)]).ToArray());
+
             IMongoCollection<Tweet> collectionTweets = _database.GetCollection<Tweet>("usertweets"); //Connection to usercreds collection
 
             var tweetList = new List<Tweet>{
-                        new Tweet { _id = p.Tweet._id,
+                        new Tweet { 
+                                    _id = tweetID,
+                                    userid = p.Tweet.userid,
                                     dateTimePosted = DateTime.Now.ToOADate(),
                                     tweet = p.Tweet.tweet
                                   }
             };
 
-            //var tweetsList = new List<Tweets>{
-            //           new Tweets {
-            //                        tweets = tweetList
-            //                      }
-            //};
             collectionTweets.InsertManyAsync(tweetList).GetAwaiter().GetResult();
+
+
             //}
             return null;
+        }
+
+
+        Packet GetTweets(Packet p)
+        {
+            Packet pSend = new Packet();
+            IMongoCollection<Tweet> collection = _database.GetCollection<Tweet>("usertweets");
+            var user = collection.Find<Tweet>(x => x.userid == p.Tweet.userid).ToListAsync().GetAwaiter().GetResult();
+
+            List<Tweet> tweetsList = new List<Tweet>();
+
+            for (int i = 0; i < user.Count; i++)
+            {
+                tweetsList[i].userid = user[i].userid;
+                tweetsList[i].tweet = user[i].tweet;
+                tweetsList[i].dateTimePosted = user[i].dateTimePosted;
+            }
+
+            var testClass = new Tweets()
+            {
+                tweets = tweetsList
+            };
+
+            var pack = new Packet()
+            {
+                Tweets = testClass
+            };
+
+            return pack;
         }
 
         /*

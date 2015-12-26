@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MongoDB.Bson;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,8 @@ namespace ws2
 
     public class Tweet
     {
-        public int _id { get; set; }
+        public string _id { get; set; }
+        public int userid { get; set; }
         public string tweet { get; set; }
         public double dateTimePosted { get; set; }
     }
