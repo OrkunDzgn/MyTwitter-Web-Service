@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 namespace ws2
 {
     public class Tweets
-    { 
+    {
         public List<Tweet> tweets { get; set; }
     }
 
@@ -15,8 +15,7 @@ namespace ws2
     {
         public int _id { get; set; }
         public string tweet { get; set; }
-        public string datePosted { get; set; }
-        public string timePosted { get; set; }
+        public double dateTimePosted { get; set; }
     }
 
     public class Error

@@ -39,7 +39,7 @@ namespace ws2.Controllers
                     return SignUp(p);
                     break;
                 case "SendTweet":
-                    //return SendTweet(p);
+                    return SendTweet(p);
                     break;
                 case "UpdateUser":
                     return UpdateUser(p);
@@ -52,7 +52,7 @@ namespace ws2.Controllers
         User GetUser(Packet p)
         {
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
+            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
             User userInfo = new User();
             userInfo._id = user[0]._id;
             userInfo.username = user[0].username;
@@ -161,6 +161,28 @@ namespace ws2.Controllers
                 };
                 collectionUser.InsertManyAsync(listInfo).GetAwaiter().GetResult();
             }
+            return null;
+        }
+
+
+        User SendTweet(Packet p)
+        {
+            IMongoCollection<Tweet> collectionTweets = _database.GetCollection<Tweet>("usertweets"); //Connection to usercreds collection
+
+            var tweetList = new List<Tweet>{
+                        new Tweet { _id = p.Tweet._id,
+                                    dateTimePosted = DateTime.Now.ToOADate(),
+                                    tweet = p.Tweet.tweet
+                                  }
+            };
+
+            //var tweetsList = new List<Tweets>{
+            //           new Tweets {
+            //                        tweets = tweetList
+            //                      }
+            //};
+            collectionTweets.InsertManyAsync(tweetList).GetAwaiter().GetResult();
+            //}
             return null;
         }
 

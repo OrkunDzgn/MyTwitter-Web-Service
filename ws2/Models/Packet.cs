@@ -15,5 +15,6 @@ namespace ws2.Models
         public Error Error { get; set; }
         public Following Following { get; set; }
         public Followers Followers { get; set; }
+        public Tweet Tweet { get; set; }
     }
 }
