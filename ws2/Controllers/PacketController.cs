@@ -203,13 +203,23 @@ namespace ws2.Controllers
             var user = collection.Find<Tweet>(x => x.userid == p.Tweet.userid).ToListAsync().GetAwaiter().GetResult();
 
             List<Tweet> tweetsList = new List<Tweet>();
+            //List<double> dateTimeList = new List<double>();
+            //List<string> tweetsOrderedList = new List<string>();
+            //List<double> dateTimeOrderedList = new List<double>();
+
 
             for (int i = 0; i < user.Count; i++)
             {
-                tweetsList[i].userid = user[i].userid;
-                tweetsList[i].tweet = user[i].tweet;
-                tweetsList[i].dateTimePosted = user[i].dateTimePosted;
+                //dateTimeList.Add(user[i].dateTimePosted);
+                tweetsList.Add(new Tweet { 
+                                          tweet = user[i].tweet,
+                                          dateTimePosted = user[i].dateTimePosted
+                                         }
+                );
             }
+
+            //dateTimeList.Sort((s1, s2) => s1.CompareTo(s2));
+
 
             var testClass = new Tweets()
             {
