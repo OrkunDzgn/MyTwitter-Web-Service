@@ -56,13 +56,21 @@ namespace ws2.Controllers
         {
             Packet pSend = new Packet();
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
-            //User userInfo = new User();
-            pSend.User._id = user[0]._id;
-            pSend.User.username = user[0].username;
-            pSend.User.description = user[0].description;
-            pSend.User.dateJoined = user[0].dateJoined;
-            return pSend;
+            var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
+            var testClass = new User()
+            {
+                username = user[0].username,
+                _id = user[0]._id,
+                dateJoined = user[0].dateJoined,
+                description = user[0].description,
+                profilePicture = user[0].profilePicture
+            };
+            var testPacket = new Packet()
+            {
+                User = testClass
+            };
+
+            return testPacket;
         }
 
 
@@ -106,6 +114,7 @@ namespace ws2.Controllers
                 {
                     var testClass = new User()
                     {
+                        _id = p.UserCreds._id,
                         username = p.UserCreds.username
                     };
                     var pack = new Packet()
@@ -211,7 +220,8 @@ namespace ws2.Controllers
             for (int i = 0; i < user.Count; i++)
             {
                 //dateTimeList.Add(user[i].dateTimePosted);
-                tweetsList.Add(new Tweet { 
+                tweetsList.Add(new Tweet {
+                                          userid = user[i].userid,
                                           tweet = user[i].tweet,
                                           dateTimePosted = user[i].dateTimePosted
                                          }
