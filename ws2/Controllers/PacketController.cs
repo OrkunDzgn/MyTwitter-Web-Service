@@ -61,6 +61,9 @@ namespace ws2.Controllers
             if (user.Count > 0) { 
                 var testClass = new User()
                 {
+                    _id = user[0]._id,
+                    username = user[0].username,
+                    dateJoined = user[0].dateJoined,
                     description = user[0].description,
                     profilePicture = user[0].profilePicture
                 };
@@ -127,7 +130,7 @@ namespace ws2.Controllers
                 var errorClass = new Error()
                 {
                     error = true,
-                    errorDescription = "Username couldn't be added."
+                    errorDescription = "Username couldn't be updated."
                 };
                 var testPacket = new Packet()
                 {
@@ -162,6 +165,11 @@ namespace ws2.Controllers
                         _id = p.UserCreds._id,
                         username = p.UserCreds.username
                     };
+                    var errorClass = new Error()
+                    {
+                        error = false,
+                        errorDescription = "User Login Successful"
+                    };
                     var pack = new Packet()
                     {
                         Function = "GetUser",
@@ -169,17 +177,33 @@ namespace ws2.Controllers
                     };
                     return GetUser(pack);
                 }
-                else {
-                    //p.Error.error = "{\"error\": \"Invalid Username - Password combination.\"}";
-                    //return errorPacket;
-                    return null;
+                else { //Password wrong
+                    var errorClass = new Error()
+                    {
+                        error = true,
+                        errorDescription = "Password does not match with the username."
+                    };
+                    var testPacket = new Packet()
+                    {
+                        Error = errorClass
+                    };
+
+                    return testPacket; //Send Packet with Error
                 }
             }
-            else //No username like that
+            else //Username does not exist in the database
             {
-                //p.Error.error = "{\"error\": \"There is no registered username.\"}";
-                //return errorPacket;
-                return null;
+                var errorClass = new Error()
+                {
+                    error = true,
+                    errorDescription = "Username does not exist."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
             }
             
         }
