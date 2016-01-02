@@ -61,15 +61,13 @@ namespace ws2.Controllers
             if (user.Count > 0) { 
                 var testClass = new User()
                 {
-                    username = user[0].username,
-                    _id = user[0]._id,
-                    dateJoined = user[0].dateJoined,
                     description = user[0].description,
                     profilePicture = user[0].profilePicture
                 };
                 var errorClass = new Error()
                 {
-                    error = false
+                    error = false,
+                    errorDescription = "User informations received."
                 };
                 var testPacket = new Packet()
                 {
@@ -98,21 +96,46 @@ namespace ws2.Controllers
 
         Packet UpdateUser(Packet p)
         {
-            //Packet pSend = new Packet();
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
+            var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
 
-            var listInfo = new List<User>{
+            if (user.Count > 0)
+            {
+                var listInfo = new List<User>{
                              new User { description = p.User.description,
                                         profilePicture = p.User.profilePicture
                                       }
                 };
-            var filter = Builders<User>.Filter.Eq("_id", p.User._id);
-            var updateDescription = Builders<User>.Update.Set("description", p.User.description);
-            var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
-            collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
-            collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
-            return null;
+                var filter = Builders<User>.Filter.Eq("username", p.User.username);
+                var updateDescription = Builders<User>.Update.Set("description", p.User.description);
+                var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+                collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
+                collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "User informations updated."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+                return testPacket;
+            }
+            else
+            {
+                var errorClass = new Error()
+                {
+                    error = true,
+                    errorDescription = "Username couldn't be added."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
+            }
         }
         
         
