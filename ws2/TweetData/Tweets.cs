@@ -16,6 +16,7 @@ namespace ws2
     {
         public string _id { get; set; }
         public int userid { get; set; }
+        public string username { get; set; }
         public string tweet { get; set; }
         public double dateTimePosted { get; set; }
     }

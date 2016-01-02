@@ -271,7 +271,7 @@ namespace ws2.Controllers
             //Create a uniqueID for tweet -walkaround for unique _id in mongoDB
             const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789";
             var random = new Random();
-            string tweetID = new string(Enumerable.Repeat(chars, 30).Select(s => s[random.Next(s.Length)]).ToArray());
+            string tweetID = new string(Enumerable.Repeat(chars, 20).Select(s => s[random.Next(s.Length)]).ToArray());
 
             IMongoCollection<Tweet> collectionTweets = _database.GetCollection<Tweet>("usertweets"); //Connection to usercreds collection
 
@@ -279,6 +279,7 @@ namespace ws2.Controllers
                         new Tweet { 
                                     _id = tweetID,
                                     userid = p.Tweet.userid,
+                                    username = p.Tweet.username,
                                     dateTimePosted = DateTime.Now.ToOADate(),
                                     tweet = p.Tweet.tweet
                                   }
@@ -286,9 +287,17 @@ namespace ws2.Controllers
 
             collectionTweets.InsertManyAsync(tweetList).GetAwaiter().GetResult();
 
+            var errorClass = new Error()
+            {
+                error = false,
+                errorDescription = "Tweet sent."
+            };
+            var testPacket = new Packet()
+            {
+                Error = errorClass
+            };
 
-            //}
-            return null;
+            return testPacket; //Send Packet with Error
         }
 
 
