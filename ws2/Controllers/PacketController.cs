@@ -109,21 +109,62 @@ namespace ws2.Controllers
                                         profilePicture = p.User.profilePicture
                                       }
                 };
-                var filter = Builders<User>.Filter.Eq("username", p.User.username);
-                var updateDescription = Builders<User>.Update.Set("description", p.User.description);
-                var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
-                collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
-                collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
-                var errorClass = new Error()
+                if (p.User.description != null && p.User.profilePicture != null)
                 {
-                    error = false,
-                    errorDescription = "User informations updated."
-                };
-                var testPacket = new Packet()
+                    var filter = Builders<User>.Filter.Eq("username", p.User.username);
+                    var updateDescription = Builders<User>.Update.Set("description", p.User.description);
+                    //var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+                    collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
+                    //collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+                    var errorClass = new Error()
+                    {
+                        error = false,
+                        errorDescription = "User description and profile picture updated."
+                    };
+                    var testPacket = new Packet()
+                    {
+                        Error = errorClass
+                    };
+                    return testPacket;
+                }
+                else if (p.User.description != null) {
+                    var filter = Builders<User>.Filter.Eq("username", p.User.username);
+                    var updateDescription = Builders<User>.Update.Set("description", p.User.description);
+                    //var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+                    collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
+                    //collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+                    var errorClass = new Error()
+                    {
+                        error = false,
+                        errorDescription = "User description updated."
+                    };
+                    var testPacket = new Packet()
+                    {
+                        Error = errorClass
+                    };
+                    return testPacket;
+                }
+                else if(p.User.profilePicture != null)
                 {
-                    Error = errorClass
-                };
-                return testPacket;
+                    var filter = Builders<User>.Filter.Eq("username", p.User.username);
+                    //var updateDescription = Builders<User>.Update.Set("description", p.User.description);
+                    var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+                    //collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
+                    collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+                    var errorClass = new Error()
+                    {
+                        error = false,
+                        errorDescription = "User profile picture updated."
+                    };
+                    var testPacket = new Packet()
+                    {
+                        Error = errorClass
+                    };
+                    return testPacket;
+                }
+                return null;
+                
+                
             }
             else
             {
