@@ -217,9 +217,17 @@ namespace ws2.Controllers
             var userCred = collection.Find<UserCredential>(x => x.username == p.UserCreds.username).ToListAsync().GetAwaiter().GetResult();
             if (userCred.Count > 0)
             {
-                //User errorPacket = new User();
-                //p.User.error = "{\"error\": \"Username already exists.\"}";
-                //return errorPacket;
+                var errorClass = new Error()
+                {
+                    error = true,
+                    errorDescription = "Username already exists."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
             }
             else //If not, get the username and pass from received packet and insert into usercreds collection in database
             {
@@ -243,8 +251,18 @@ namespace ws2.Controllers
                                       }
                 };
                 collectionUser.InsertManyAsync(listInfo).GetAwaiter().GetResult();
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "Sign Up successful."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
             }
-            return null;
         }
 
 
