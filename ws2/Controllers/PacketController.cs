@@ -305,167 +305,50 @@ namespace ws2.Controllers
         {
             Packet pSend = new Packet();
             IMongoCollection<Tweet> collection = _database.GetCollection<Tweet>("usertweets");
-            var user = collection.Find<Tweet>(x => x.userid == p.Tweet.userid).ToListAsync().GetAwaiter().GetResult();
+            var user = collection.Find<Tweet>(x => x.username == p.Tweet.username).ToListAsync().GetAwaiter().GetResult();
+            if (user.Count > 0) { 
+                List<Tweet> tweetsList = new List<Tweet>();
 
-            List<Tweet> tweetsList = new List<Tweet>();
-            //List<double> dateTimeList = new List<double>();
-            //List<string> tweetsOrderedList = new List<string>();
-            //List<double> dateTimeOrderedList = new List<double>();
-
-
-            for (int i = 0; i < user.Count; i++)
-            {
-                //dateTimeList.Add(user[i].dateTimePosted);
-                tweetsList.Add(new Tweet {
-                                          userid = user[i].userid,
-                                          tweet = user[i].tweet,
-                                          dateTimePosted = user[i].dateTimePosted
-                                         }
-                );
-            }
-
-            //dateTimeList.Sort((s1, s2) => s1.CompareTo(s2));
-
-
-            var testClass = new Tweets()
-            {
-                tweets = tweetsList
-            };
-
-            var pack = new Packet()
-            {
-                Tweets = testClass
-            };
-
-            return pack;
-        }
-
-        /*
-        User SendTweet(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            //Check for any problem
-            //Tweet CurrentTweet = JsonConvert.DeserializeObject<Tweet>(p.tweets);
-
-            
-            var user = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
-            if (user.Count == 0)
-            {
-                User errorPacket = new User();
-                p.User.error = "{\"error\": \"An error occured while receiving your data.\"}";
-                return errorPacket;
-            }
-            else //If not, get the _id and tweet from received packet and insert into database
-            {
-                //First get the current tweets of the user
-                var us = collection.Find<User>(x => x._id == p.User._id).ToListAsync().GetAwaiter().GetResult();
-                User current = new User();
-                current.tweets = us[0].tweets;
-
-
-                /*
-
-                if (current.tweets != null) { 
-                    string allTweetsStr = current.tweets.ToString();
-                    allTweetsStr = allTweetsStr.Remove(allTweetsStr.Length - 1);
-                    allTweetsStr = allTweetsStr + ", " + "{" + "\"tweet\"" + ":" + "\"" + p.tweets + "\"" + ", " + "\"datePosted\"" + ": " + "\"" + DateTime.Now.ToString("yyyy/MM/dd") + "\"" + "," + "\"timePosted\"" + ": " + "\"" + DateTime.Now.TimeOfDay.ToString() + "\"}" + "]";
-                
-                    User newTweet = new User();
-                    newTweet.tweets = allTweetsStr;
-
-                    var filter = Builders<User>.Filter.Eq("_id", p._id);
-                    var update = Builders<User>.Update.Set("tweets", allTweetsStr);
-                    var result = collection.UpdateOneAsync(filter, update).GetAwaiter().GetResult();
-
-                    //Return the new string
-                    return newTweet;
-                }
-                else
+                for (int i = 0; i < user.Count; i++)
                 {
-                    //string allTweetsStr = current.tweets.ToString();
-                    string allTweetsStr = "";
-                    allTweetsStr = allTweetsStr + "[" + "{" + "\"tweet\"" + ":" + "\"" + p.tweets + "\"" + ", " + "\"datePosted\"" + ": " + "\"" + DateTime.Now.ToString("yyyy/MM/dd") + "\"" + "," + "\"timePosted\"" + ": " + "\"" + DateTime.Now.TimeOfDay.ToString() + "\"}" + "]";
-                
-                    var filter = Builders<User>.Filter.Eq("_id", p._id);
-                    var update = Builders<User>.Update.Set("tweets", allTweetsStr);
-                    var result = collection.UpdateOneAsync(filter, update).GetAwaiter().GetResult();
+                    tweetsList.Add(new Tweet {
+                                              userid = user[i].userid,
+                                              tweet = user[i].tweet,
+                                              dateTimePosted = user[i].dateTimePosted
+                                             }
+                    );
+                }
+                var testClass = new Tweets()
+                {
+                    tweets = tweetsList
+                };
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "Tweets received."
+                };
+                var pack = new Packet()
+                {
+                    Error = errorClass,
+                    Tweets = testClass
+                };
 
-                    User newTweet = new User();
-                    newTweet.tweets = allTweetsStr;
+                return pack;
+            }
+            else
+            {
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "No tweets sent by " + p.Tweet.username
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
 
-                    return newTweet;
-                }*/
- //           }
-   //         return null;
-     //   }
-
-        /*
-        User GetUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var user = collection.Find<User>(x => x._id == p._id).ToListAsync().GetAwaiter().GetResult();
-            User userInfo = new User();
-            userInfo.username = user[0].username;
-            userInfo._id = user[0]._id;
-            userInfo.description = user[0].description;
-            userInfo.dateJoined = user[0].dateJoined;
-            userInfo.profilePicture = user[0].profilePicture;
-            userInfo.coverPicture = user[0].coverPicture;
-            userInfo.tweets = user[0].tweets;
-            userInfo.following = user[0].following;
-            userInfo.followers = user[0].followers;
-            return userInfo;
+                return testPacket; //Send Packet with Error
+            }
         }
-
-
-        void InsertUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var list = new List<User> 
-                          {
-                             new User { _id = p._id,
-                                        username = p.username,
-                                        description = p.descrition,
-                                        dateJoined = DateTime.Now.ToString("yyyy/MM/dd"),
-                                        profilePicture = p.profilePicture,
-                                        coverPicture = p.coverPicture,
-                                        tweets = p.tweets,
-                                        following = p.following,
-                                        followers = p.followers,
-                                        }
-                          };
-            collection.InsertManyAsync(list).GetAwaiter().GetResult();
-        }
-
-
-        
-        void InsertUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
-            var list = new List<User> 
-                          {
-                             new User { userID = p.userID, username = p.username }
-                          };
-            collection.InsertManyAsync(list).GetAwaiter().GetResult();
-        }
-
-
-        void UpdateUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("ListDeneme");
-            var filter = Builders<User>.Filter.Eq("id", p.ID);
-            var update = Builders<User>.Update
-                .Set("name", p.Name);
-            //.CurrentDate("lastModified");
-            var result = collection.UpdateOneAsync(filter, update).GetAwaiter().GetResult();
-        }
-
-        void DeleteUser(Packet p)
-        {
-            IMongoCollection<User> collection = _database.GetCollection<User>("ListDeneme");
-            var filter = Builders<User>.Filter.Eq("id", p.ID);
-            var result = collection.DeleteManyAsync(filter).GetAwaiter().GetResult();
-        }
-        */
     }
 }
