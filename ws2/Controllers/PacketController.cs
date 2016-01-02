@@ -57,20 +57,42 @@ namespace ws2.Controllers
             Packet pSend = new Packet();
             IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
             var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
-            var testClass = new User()
-            {
-                username = user[0].username,
-                _id = user[0]._id,
-                dateJoined = user[0].dateJoined,
-                description = user[0].description,
-                profilePicture = user[0].profilePicture
-            };
-            var testPacket = new Packet()
-            {
-                User = testClass
-            };
 
-            return testPacket;
+            if (user.Count > 0) { 
+                var testClass = new User()
+                {
+                    username = user[0].username,
+                    _id = user[0]._id,
+                    dateJoined = user[0].dateJoined,
+                    description = user[0].description,
+                    profilePicture = user[0].profilePicture
+                };
+                var errorClass = new Error()
+                {
+                    error = false
+                };
+                var testPacket = new Packet()
+                {
+                    User = testClass,
+                    Error = errorClass
+                };
+
+                return testPacket; //Return packet with user informations
+            }
+            else
+            {
+                var errorClass = new Error()
+                {
+                    error = true,
+                    errorDescription = "Username couldn't be found."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
+            }
         }
 
 
