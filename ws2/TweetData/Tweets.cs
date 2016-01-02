@@ -15,7 +15,7 @@ namespace ws2
     public class Tweet
     {
         public string _id { get; set; }
-        public int userid { get; set; }
+        public int userID { get; set; }
         public string username { get; set; }
         public string tweet { get; set; }
         public double dateTimePosted { get; set; }

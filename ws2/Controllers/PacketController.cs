@@ -151,7 +151,8 @@ namespace ws2.Controllers
             if (user.Count != 0) { // >0 if there is a username in database that already registered 
                 //Data that user entered
                 var list = new List<UserCredential>{
-                                 new UserCredential { _id = p.UserCreds._id,
+                                 new UserCredential { 
+                                            _id = p.UserCreds._id,
                                             username = p.UserCreds.username,
                                             password = p.UserCreds.password
                                             }
@@ -229,10 +230,13 @@ namespace ws2.Controllers
 
                 return testPacket; //Send Packet with Error
             }
-            else //If not, get the username and pass from received packet and insert into usercreds collection in database
+            else //If not, get the username and pass from received packet and insert into usercreds collection in database with random ID
             {
+                var r = new Random();
+                int userRandomID = r.Next(1, 2147483646);
+
                 var listCred = new List<UserCredential>{
-                             new UserCredential { _id = p.UserCreds._id,
+                             new UserCredential { _id = userRandomID,
                                         username = p.UserCreds.username,
                                         password = p.UserCreds.password
                              }
@@ -243,7 +247,7 @@ namespace ws2.Controllers
                 //After sign up, we will initialize user collections in database
                 IMongoCollection<User> collectionUser = _database.GetCollection<User>("userinfos");
                 var listInfo = new List<User>{
-                             new User { _id = p.UserCreds._id,
+                             new User { _id = userRandomID,
                                         username = p.UserCreds.username,
                                         description = "",
                                         dateJoined = DateTime.Now.ToOADate(),
@@ -273,31 +277,52 @@ namespace ws2.Controllers
             var random = new Random();
             string tweetID = new string(Enumerable.Repeat(chars, 20).Select(s => s[random.Next(s.Length)]).ToArray());
 
-            IMongoCollection<Tweet> collectionTweets = _database.GetCollection<Tweet>("usertweets"); //Connection to usercreds collection
+            //Check if that user exists
+            IMongoCollection<User> collection = _database.GetCollection<User>("userinfos");
+            var user = collection.Find<User>(x => x.username == p.User.username).ToListAsync().GetAwaiter().GetResult();
 
-            var tweetList = new List<Tweet>{
+            if (user.Count > 0) // If user exists, send tweet
+            {
+                IMongoCollection<Tweet> collectionTweets = _database.GetCollection<Tweet>("usertweets"); //Connection to usercreds collection
+
+                var tweetList = new List<Tweet>{
                         new Tweet { 
                                     _id = tweetID,
-                                    userid = p.Tweet.userid,
+                                    userID =  user[0]._id,
                                     username = p.Tweet.username,
                                     dateTimePosted = DateTime.Now.ToOADate(),
                                     tweet = p.Tweet.tweet
                                   }
-            };
+                };
 
-            collectionTweets.InsertManyAsync(tweetList).GetAwaiter().GetResult();
+                collectionTweets.InsertManyAsync(tweetList).GetAwaiter().GetResult();
 
-            var errorClass = new Error()
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "Tweet sent."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
+
+                return testPacket; //Send Packet with Error
+            }
+            else //user doesn't exist, so cannot send tweet
             {
-                error = false,
-                errorDescription = "Tweet sent."
-            };
-            var testPacket = new Packet()
-            {
-                Error = errorClass
-            };
+                var errorClass = new Error()
+                {
+                    error = false,
+                    errorDescription = "Username register does not exist to send the tweet."
+                };
+                var testPacket = new Packet()
+                {
+                    Error = errorClass
+                };
 
-            return testPacket; //Send Packet with Error
+                return testPacket; //Send Packet with Error
+            }
         }
 
 
@@ -312,7 +337,9 @@ namespace ws2.Controllers
                 for (int i = 0; i < user.Count; i++)
                 {
                     tweetsList.Add(new Tweet {
-                                              userid = user[i].userid,
+                                              _id = user[0]._id,
+                                              userID = user[0].userID,
+                                              username = user[0].username, 
                                               tweet = user[i].tweet,
                                               dateTimePosted = user[i].dateTimePosted
                                              }
