@@ -113,9 +113,9 @@ namespace ws2.Controllers
                 {
                     var filter = Builders<User>.Filter.Eq("username", p.User.username);
                     var updateDescription = Builders<User>.Update.Set("description", p.User.description);
-                    //var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
+                    var updateProfilePicture = Builders<User>.Update.Set("profilePicture", p.User.profilePicture);
                     collection.UpdateOneAsync(filter, updateDescription).GetAwaiter().GetResult();
-                    //collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
+                    collection.UpdateOneAsync(filter, updateProfilePicture).GetAwaiter().GetResult();
                     var errorClass = new Error()
                     {
                         error = false,
@@ -330,7 +330,7 @@ namespace ws2.Controllers
                         new Tweet { 
                                     _id = tweetID,
                                     userID =  user[0]._id,
-                                    username = p.Tweet.username,
+                                    username = user[0].username,
                                     dateTimePosted = DateTime.Now.ToOADate(),
                                     tweet = p.Tweet.tweet
                                   }
@@ -370,6 +370,11 @@ namespace ws2.Controllers
         Packet GetTweets(Packet p)
         {
             Packet pSend = new Packet();
+
+            //Check if that user exists
+            IMongoCollection<User> collectionPicture = _database.GetCollection<User>("userinfos");
+            var userPic = collectionPicture.Find<User>(x => x.username == p.Tweet.username).ToListAsync().GetAwaiter().GetResult();
+
             IMongoCollection<Tweet> collection = _database.GetCollection<Tweet>("usertweets");
             var user = collection.Find<Tweet>(x => x.username == p.Tweet.username).ToListAsync().GetAwaiter().GetResult();
             if (user.Count > 0) { 
@@ -382,7 +387,8 @@ namespace ws2.Controllers
                                               userID = user[0].userID,
                                               username = user[0].username, 
                                               tweet = user[i].tweet,
-                                              dateTimePosted = user[i].dateTimePosted
+                                              dateTimePosted = user[i].dateTimePosted,
+                                              profilePicture = userPic[0].profilePicture
                                              }
                     );
                 }

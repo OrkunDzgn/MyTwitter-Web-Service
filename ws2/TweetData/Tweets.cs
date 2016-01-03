@@ -19,6 +19,7 @@ namespace ws2
         public string username { get; set; }
         public string tweet { get; set; }
         public double dateTimePosted { get; set; }
+        public string profilePicture { get; set; }
     }
 
     public class Error
