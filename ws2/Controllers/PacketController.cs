@@ -292,7 +292,7 @@ namespace ws2.Controllers
                                         username = p.UserCreds.username,
                                         description = "",
                                         dateJoined = DateTime.Now.ToOADate(),
-                                        profilePicture = ""
+                                        profilePicture = "http://orkunduzgun.com/android/egg.jpg"
                                       }
                 };
                 collectionUser.InsertManyAsync(listInfo).GetAwaiter().GetResult();
