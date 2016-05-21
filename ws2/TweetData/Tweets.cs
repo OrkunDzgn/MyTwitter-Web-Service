@@ -30,8 +30,8 @@ namespace ws2
 
     public class Following
     {
-        public int _id { get; set; }
-        public List<int> following { get; set; }
+        public string username { get; set; }
+        public List<string> following { get; set; }
     }
 
     public class Followers
