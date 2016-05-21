@@ -1,0 +1,24 @@
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\bin\Debug\wsConsole.exe.config
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\bin\Debug\wsConsole.exe
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\bin\Debug\wsConsole.pdb
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\obj\Debug\wsConsole.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\obj\Debug\wsConsole.exe
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\obj\Debug\wsConsole.pdb
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\bin\Debug\Newtonsoft.Json.dll
+\\psf\Home\Desktop\mapperserver  without SQL\wsConsole\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\bin\Debug\wsConsole.exe.config
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\obj\Debug\wsConsole.exe
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\obj\Debug\wsConsole.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\bin\Debug\wsConsole.exe
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\bin\Debug\wsConsole.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\wsConsole\obj\Debug\wsConsole.csprojResolveAssemblyReference.cache
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\bin\Debug\wsConsole.exe.config
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\obj\Debug\wsConsole.exe
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\obj\Debug\wsConsole.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\bin\Debug\wsConsole.exe
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\bin\Debug\wsConsole.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\wsConsole\obj\Debug\wsConsole.csprojResolveAssemblyReference.cache

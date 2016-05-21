@@ -1,0 +1,244 @@
+\\psf\Home\Desktop\mapperserver\ws2\bin\ws2.dll.config
+\\psf\Home\Desktop\mapperserver\ws2\bin\ws2.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\ws2.pdb
+\\psf\Home\Desktop\mapperserver\ws2\bin\Antlr3.Runtime.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\Microsoft.Web.Infrastructure.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Net.Http.Formatting.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Helpers.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Http.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Http.WebHost.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Mvc.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Optimization.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Razor.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.Deployment.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.Razor.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\WebGrease.dll
+\\psf\Home\Desktop\mapperserver\ws2\bin\Newtonsoft.Json.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Net.Http.Formatting.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Helpers.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Http.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Http.WebHost.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Mvc.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Optimization.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.Razor.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.Deployment.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\System.Web.WebPages.Razor.xml
+\\psf\Home\Desktop\mapperserver\ws2\bin\Antlr3.Runtime.pdb
+\\psf\Home\Desktop\mapperserver\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\mapperserver\ws2\obj\Debug\ws2.dll
+\\psf\Home\Desktop\mapperserver\ws2\obj\Debug\ws2.pdb
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\ws2.dll.config
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\ws2.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\ws2.pdb
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\Antlr3.Runtime.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\Microsoft.Web.Infrastructure.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\Newtonsoft.Json.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Net.Http.Formatting.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Helpers.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Http.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Http.WebHost.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Mvc.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Optimization.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Razor.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.Deployment.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.Razor.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\WebGrease.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\Newtonsoft.Json.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Net.Http.Formatting.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Helpers.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Http.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Http.WebHost.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Mvc.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Optimization.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.Razor.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.Deployment.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\System.Web.WebPages.Razor.xml
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\bin\Antlr3.Runtime.pdb
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\obj\Debug\ws2.dll
+\\psf\Home\Desktop\mapperserver  without SQL\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\obj\Debug\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\ws2.dll.config
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\Antlr3.Runtime.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Net.Http.Formatting.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Helpers.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Http.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Http.WebHost.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Mvc.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Optimization.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\WebGrease.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Net.Http.Formatting.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Helpers.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Http.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Http.WebHost.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Mvc.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Optimization.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\bin\Antlr3.Runtime.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\obj\Debug\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\ws2.dll.config
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\Antlr3.Runtime.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\MongoDB.Bson.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\MongoDB.Driver.Core.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\MongoDB.Driver.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Net.Http.Formatting.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Helpers.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Http.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Http.WebHost.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Mvc.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Optimization.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\WebGrease.dll
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\MongoDB.Bson.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\MongoDB.Driver.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Net.Http.Formatting.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Helpers.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Http.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Http.WebHost.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Mvc.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Optimization.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\bin\Antlr3.Runtime.pdb
+C:\Users\Orkun\Desktop\mobile server notları\New folder v2\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\ws2.dll.config
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\Antlr3.Runtime.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\MongoDB.Bson.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\MongoDB.Driver.Core.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\MongoDB.Driver.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Net.Http.Formatting.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Helpers.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Http.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Http.WebHost.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Mvc.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Optimization.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\WebGrease.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\MongoDB.Bson.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\MongoDB.Driver.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Net.Http.Formatting.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Helpers.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Http.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Http.WebHost.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Mvc.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Optimization.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\bin\Antlr3.Runtime.pdb
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\obj\Debug\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\ws2Kodlari\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\ws2.dll.config
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\Antlr3.Runtime.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\MongoDB.Bson.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\MongoDB.Driver.Core.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\MongoDB.Driver.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Net.Http.Formatting.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Helpers.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Http.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Http.WebHost.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Mvc.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Optimization.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\WebGrease.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\MongoDB.Bson.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\MongoDB.Driver.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Net.Http.Formatting.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Helpers.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Http.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Http.WebHost.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Mvc.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Optimization.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\bin\Antlr3.Runtime.pdb
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\obj\Debug\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\WebServer\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\ws2.dll.config
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\Antlr3.Runtime.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\MongoDB.Bson.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\MongoDB.Driver.Core.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\MongoDB.Driver.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\Newtonsoft.Json.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Net.Http.Formatting.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Helpers.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Http.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Http.WebHost.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Mvc.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Optimization.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.Razor.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\WebGrease.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\MongoDB.Bson.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\MongoDB.Driver.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\Newtonsoft.Json.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Net.Http.Formatting.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Helpers.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Http.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Http.WebHost.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Mvc.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Optimization.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\System.Web.WebPages.Razor.xml
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\bin\Antlr3.Runtime.pdb
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\obj\Debug\ws2.dll
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\obj\Debug\ws2.pdb
+C:\Users\Orkun\Desktop\mobile server notları\Twitter\WebServerTwitter\ws2\obj\Debug\ws2.csprojResolveAssemblyReference.cache
